@@ -16,6 +16,7 @@ function send() {
 
   fetch("https://geethal.app.n8n.cloud/webhook/whatsapp", {
     method: "POST",
+    mode: "no-cors",   // ⭐ IMPORTANT
     headers: {
       "Content-Type": "application/json"
     },
@@ -24,15 +25,11 @@ function send() {
         Body: message
       }
     })
-  })
-  .then(res => res.text())
-  .then(() => {
-    alert("✅ Event Created!");
-  })
-  .catch(err => {
-    alert("❌ Error: " + err);
   });
+
+  alert("✅ Event Created!");
 }
+  
 </script>
 
 </body>
