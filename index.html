@@ -2,12 +2,41 @@
 <html>
 <head>
   <title>Chat2Calendar</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+      background: #f5f5f5;
+    }
+    h2 {
+      color: #333;
+    }
+    input {
+      padding: 12px;
+      width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 12px 20px;
+      margin-left: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Chat2Calendar</h2>
+<h2>🚀 Chat2Calendar</h2>
 
-<input type="text" id="msg" placeholder="Enter your task" />
+<input type="text" id="msg" placeholder="Enter your task..." />
 <button onclick="send()">Create Event</button>
 
 <script>
@@ -16,7 +45,7 @@ function send() {
 
   fetch("https://geethal.app.n8n.cloud/webhook/whatsapp", {
     method: "POST",
-    mode: "no-cors",   // ⭐ IMPORTANT
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json"
     },
@@ -27,9 +56,8 @@ function send() {
     })
   });
 
-  alert("✅ Event Created!");
+  alert("✅ Event created successfully!");
 }
-  
 </script>
 
 </body>
